@@ -1,6 +1,7 @@
+from math import ceil
+
 from menu import MENU
 from menu import resources
-from math import ceil
 
 
 def print_report():
@@ -60,9 +61,10 @@ def prepare_coffee(choice):
         deduct_resources(MENU[choice])
         print(f"Here is your {choice}. Enjoy!")
 
+
 machine_on_flag = True
 while machine_on_flag:
-    user_choice = input("What would you like? (espresso/latte/cappuccino): ")
+    user_choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
     if user_choice == "off":
         print("Switched off!")
         machine_on_flag = False
